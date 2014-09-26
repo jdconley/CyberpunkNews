@@ -20,11 +20,5 @@ namespace CyberpunkNews.Controllers
         {
             return PartialView();
         }
-
-        [Authorize]
-        public ActionResult TodoManager()
-        {
-            return PartialView();
-        }
     }
 }

@@ -173,7 +173,6 @@
     <Compile Include="Controllers\MainController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
     <Compile Include="Controllers\WS_AccountController.cs" />
-    <Compile Include="Controllers\WS_TodoController.cs" />
     <Compile Include="Controllers\WS_TopicController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -198,6 +197,10 @@
     <Compile Include="Migrations\201409260542229_AddSubmitterToTopic.Designer.cs">
       <DependentUpon>201409260542229_AddSubmitterToTopic.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201409260602395_RemoveTODOItemsFromTemplate.cs" />
+    <Compile Include="Migrations\201409260602395_RemoveTODOItemsFromTemplate.Designer.cs">
+      <DependentUpon>201409260602395_RemoveTODOItemsFromTemplate.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountBindingModels.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -216,7 +219,6 @@
     <Content Include="Assets\app\controllers\mainCtrl.js" />
     <Content Include="Assets\app\controllers\registerCtrl.js" />
     <Content Include="Assets\app\controllers\signInCtrl.js" />
-    <Content Include="Assets\app\controllers\todoManagerCtrl.js" />
     <Content Include="Assets\bootstrap\css\bootstrap-theme.css" />
     <Content Include="Assets\bootstrap\css\bootstrap-theme.min.css" />
     <Content Include="Assets\bootstrap\css\bootstrap.css" />
@@ -287,6 +289,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201409260542229_AddSubmitterToTopic.resx">
       <DependentUpon>201409260542229_AddSubmitterToTopic.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201409260602395_RemoveTODOItemsFromTemplate.resx">
+      <DependentUpon>201409260602395_RemoveTODOItemsFromTemplate.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

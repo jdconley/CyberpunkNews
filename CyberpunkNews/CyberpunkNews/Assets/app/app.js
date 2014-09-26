@@ -51,10 +51,6 @@ app.config(['$routeProvider', '$locationProvider', '$httpProvider', function ($r
         templateUrl: 'App/SignIn',
         controller: 'signInCtrl'
     });
-    //$routeProvider.when('/todomanager', {
-    //    templateUrl: 'App/TodoManager',
-    //    controller: 'todoManagerCtrl'
-    //});
     
     $routeProvider.otherwise({
         redirectTo: '/'

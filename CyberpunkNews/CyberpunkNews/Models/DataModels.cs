@@ -26,16 +26,6 @@ namespace CyberpunkNews.Models
             // Add custom user claims here
             return userIdentity;
         }
-
-        public virtual List<todoItem> todoItems { get; set; }
-    }
-
-    public class todoItem
-    {
-        [Key]
-        public int id { get; set; }
-        public string task { get; set; }
-        public bool completed { get; set; }
     }
 
     public class topic
@@ -83,7 +73,6 @@ namespace CyberpunkNews.Models
             return new DBContext();
         }
 
-        public DbSet<todoItem> todos { get; set; }
         public DbSet<topic> topics { get; set; }
         public DbSet<vote> votes { get; set; }
 
