@@ -47,6 +47,7 @@ namespace CyberpunkNews.Models
         [Required]
         public string url { get; set; }
         public DateTimeOffset submitDate { get; set; }
+        public string submitter { get; set; }
         public int karma { get; set; }
     }
 

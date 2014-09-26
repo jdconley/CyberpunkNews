@@ -7,6 +7,7 @@
                     $scope.topics = data;
                     _.forEach($scope.topics, function (topic) {
                         topic.submitDate = new Date(topic.submitDate.substr(0, 19));
+                        if (!topic.submitter) topic.submitter = 'anonymous';
                     });
 
                     var sortType = $location.search().sort;

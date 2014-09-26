@@ -55,6 +55,7 @@ namespace CyberpunkNews.Controllers
             if (errors.Count == 0)
             {
                 item.submitDate = DateTimeOffset.UtcNow;
+                item.submitter = Request.GetOwinContext().Authentication.User.Identity.Name;
 
                 db.topics.Add(item);
                 db.SaveChanges();

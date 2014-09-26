@@ -194,6 +194,10 @@
     <Compile Include="Migrations\201409260521375_Vote.Designer.cs">
       <DependentUpon>201409260521375_Vote.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201409260542229_AddSubmitterToTopic.cs" />
+    <Compile Include="Migrations\201409260542229_AddSubmitterToTopic.Designer.cs">
+      <DependentUpon>201409260542229_AddSubmitterToTopic.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountBindingModels.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -280,6 +284,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201409260521375_Vote.resx">
       <DependentUpon>201409260521375_Vote.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201409260542229_AddSubmitterToTopic.resx">
+      <DependentUpon>201409260542229_AddSubmitterToTopic.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
