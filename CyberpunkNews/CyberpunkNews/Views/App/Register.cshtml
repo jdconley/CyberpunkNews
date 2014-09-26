@@ -2,10 +2,11 @@
 
 <form ng-submit="register()" class="row">
     <div class="col-md-3">
-        <div class="row"><input class="form-control" type="text" ng-model="username" placeholder="Username" /></div>
+        <div class="row"><input class="form-control" type="text" ng-model="username" placeholder="Email" /></div>
         <div class="row"><input class="form-control" type="password" ng-model="password1" placeholder="Password" /></div>
         <div class="row"><input class="form-control" type="password" ng-model="password2" placeholder="Confirm Password" /></div>
         <div class="row"><input class="btn btn-primary" type="submit" value="Register" /></div>
     </div>    
 </form>
 <div class="row"><div class="row alert alert-danger" ng-show="showAlert">{{message}}</div></div>
+<div class="row"><div class="row alert alert-success" ng-show="showSuccess">Registration successful, redirecting you to <a href="/signin">signin page</a>.</div></div>

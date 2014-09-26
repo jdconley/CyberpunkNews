@@ -4,7 +4,10 @@ var app = angular.module('app', [
     'ngRoute',
     'ngCookies',
     'topic',
-    'submitTopic'
+    'submitTopic',
+    'signIn',
+    'register',
+    'main'
 ]);
 
 app.config(['$routeProvider', '$locationProvider', '$httpProvider', function ($routeProvider, $locationProvider, $httpProvider) {
@@ -40,14 +43,14 @@ app.config(['$routeProvider', '$locationProvider', '$httpProvider', function ($r
         templateUrl: 'Assets/template/submit_topic.html',
         controller: 'submitTopicCtrl'
     });
-    //$routeProvider.when('/register', {
-    //    templateUrl: 'App/Register',
-    //    controller: 'registerCtrl'
-    //});
-    //$routeProvider.when('/signin', {
-    //    templateUrl: 'App/SignIn',
-    //    controller: 'signInCtrl'
-    //});
+    $routeProvider.when('/register', {
+        templateUrl: 'App/Register',
+        controller: 'registerCtrl'
+    });
+    $routeProvider.when('/signin', {
+        templateUrl: 'App/SignIn',
+        controller: 'signInCtrl'
+    });
     //$routeProvider.when('/todomanager', {
     //    templateUrl: 'App/TodoManager',
     //    controller: 'todoManagerCtrl'

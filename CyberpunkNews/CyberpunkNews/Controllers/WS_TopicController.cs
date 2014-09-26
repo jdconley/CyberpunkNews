@@ -19,6 +19,7 @@ namespace CyberpunkNews.Controllers
             return db.topics.ToList();
         }
         
+        [Authorize]
         [HttpPost]
         public HttpResponseMessage Upvote(int id)
         {

@@ -8,7 +8,7 @@
             if ($location.path() === '/signin')
                 $scope.getUserName();
             else
-                window.location = '#/signin';
+                window.location = '/';
         }
 
         $scope.getUserName = function () {
