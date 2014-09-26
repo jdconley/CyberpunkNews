@@ -20,15 +20,40 @@ namespace CyberpunkNews.Controllers
         }
         
         [HttpPost]
-        async public Task<HttpResponseMessage> Upvote(int id)
+        public HttpResponseMessage Upvote(int id)
         {
-            var item = db.topics.FirstOrDefault(t => t.id == id);
-            if (item != null)
-            {
-                item.karma += 1;
-                await db.SaveChangesAsync();
-            }
+            var item = db.topics.First(t => t.id == id);
+            item.karma += 1;
+            db.SaveChanges();
+
             return Request.CreateResponse(HttpStatusCode.Accepted);
+        }
+
+        [HttpPost]
+        public HttpResponseMessage Submit(topic item)
+        {
+            var modelStateErrors = ModelState.Values.ToList();
+
+            List<string> errors = new List<string>();
+
+            foreach (var s in modelStateErrors)
+                foreach (var e in s.Errors)
+                    if (e.ErrorMessage != null && e.ErrorMessage.Trim() != "")
+                        errors.Add(e.ErrorMessage);
+
+            if (errors.Count == 0)
+            {
+                item.submit_date = DateTimeOffset.UtcNow;
+
+                db.topics.Add(item);
+                db.SaveChanges();
+
+                return Request.CreateResponse(HttpStatusCode.Accepted);
+            }
+            else
+            {
+                return Request.CreateResponse<List<string>>(HttpStatusCode.BadRequest, errors);
+            }
         }
     }
 }

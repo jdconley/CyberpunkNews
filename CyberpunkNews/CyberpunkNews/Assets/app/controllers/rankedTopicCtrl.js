@@ -18,5 +18,4 @@
             });
         };
 
-        $scope.now = new Date();
     }]);

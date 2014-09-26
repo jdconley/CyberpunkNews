@@ -186,6 +186,10 @@
     <Compile Include="Migrations\201409260232404_TopicKarma.Designer.cs">
       <DependentUpon>201409260232404_TopicKarma.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201409260331131_MadeTopicTitleAndUrlRequired.cs" />
+    <Compile Include="Migrations\201409260331131_MadeTopicTitleAndUrlRequired.Designer.cs">
+      <DependentUpon>201409260331131_MadeTopicTitleAndUrlRequired.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountBindingModels.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -198,6 +202,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Assets\app\app.js" />
+    <Content Include="Assets\app\controllers\submitTopicCtrl.js" />
     <Content Include="Assets\app\controllers\rankedTopicCtrl.js" />
     <Content Include="Assets\app\controllers\homeCtrl.js" />
     <Content Include="Assets\app\controllers\mainCtrl.js" />
@@ -220,6 +225,7 @@
     <Content Include="Assets\ng\angular-route.min.js" />
     <Content Include="Assets\ng\angular.min.js" />
     <Content Include="Assets\styles\styles.css" />
+    <Content Include="Assets\template\submit_topic.html" />
     <Content Include="Assets\template\topic_list.html" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
@@ -264,6 +270,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201409260232404_TopicKarma.resx">
       <DependentUpon>201409260232404_TopicKarma.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201409260331131_MadeTopicTitleAndUrlRequired.resx">
+      <DependentUpon>201409260331131_MadeTopicTitleAndUrlRequired.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
