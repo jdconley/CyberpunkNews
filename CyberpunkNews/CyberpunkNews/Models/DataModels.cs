@@ -45,6 +45,7 @@ namespace CyberpunkNews.Models
         public string title { get; set; }
         public string url { get; set; }
         public DateTimeOffset submit_date { get; set; }
+        public int karma { get; set; }
     }
 
     public class DBContext : IdentityDbContext<User>

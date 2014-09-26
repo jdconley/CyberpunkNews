@@ -28,6 +28,7 @@ namespace CyberpunkNews
                         "~/Assets/jquery/jquery.min.js"));
 
             bundles.Add(new ScriptBundle("~/misc").Include(
+                "~/Assets/misc/lodash.min.js",
                 "~/Assets/misc/modernizr.min.js",
                 "~/Assets/misc/respond.min.js"
                 ));

@@ -22,7 +22,13 @@ namespace CyberpunkNews.Migrations
             //
             context.topics.AddOrUpdate(
               t => t.url,
-              new topic { title = "title 1", url = "http://www.google.com", submit_date = DateTimeOffset.Now }
+              new topic
+              {
+                  title = "title 1",
+                  url = "http://www.google.com",
+                  submit_date = DateTimeOffset.UtcNow,
+                  karma = 3
+              }
             );
             
         }
