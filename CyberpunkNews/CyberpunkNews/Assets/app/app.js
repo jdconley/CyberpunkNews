@@ -34,7 +34,7 @@ app.config(['$routeProvider', '$locationProvider', '$httpProvider', function ($r
     //================================================
     $routeProvider.when('/', {
         templateUrl: 'Assets/template/topic_list.html',
-        controller: 'rankedTopicCtrl'
+        controller: 'topicCtrl'
     });
     $routeProvider.when('/submit', {
         templateUrl: 'Assets/template/submit_topic.html',

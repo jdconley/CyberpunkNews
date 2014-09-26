@@ -203,7 +203,7 @@
   <ItemGroup>
     <Content Include="Assets\app\app.js" />
     <Content Include="Assets\app\controllers\submitTopicCtrl.js" />
-    <Content Include="Assets\app\controllers\rankedTopicCtrl.js" />
+    <Content Include="Assets\app\controllers\topicCtrl.js" />
     <Content Include="Assets\app\controllers\homeCtrl.js" />
     <Content Include="Assets\app\controllers\mainCtrl.js" />
     <Content Include="Assets\app\controllers\registerCtrl.js" />
