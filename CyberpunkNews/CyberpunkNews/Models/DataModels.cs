@@ -38,6 +38,15 @@ namespace CyberpunkNews.Models
         public bool completed { get; set; }
     }
 
+    public class topic
+    {
+        [Key]
+        public int id { get; set; }
+        public string title { get; set; }
+        public string url { get; set; }
+        public DateTimeOffset submit_date { get; set; }
+    }
+
     public class DBContext : IdentityDbContext<User>
     {
         public DBContext()
@@ -63,6 +72,7 @@ namespace CyberpunkNews.Models
         }
 
         public DbSet<todoItem> todos { get; set; }
+        public DbSet<topic> topics { get; set; }
 
     }
 
@@ -72,31 +82,31 @@ namespace CyberpunkNews.Models
         protected override void Seed(DBContext context)
         {
             //The UserManager and RoleManager is great for creating default admin users and putting them into the necessary roles.
-            //var UserManager = new UserManager<User>(new UserStore<User>(context));
-            //var RoleManager = new RoleManager<IdentityRole>(new RoleStore<IdentityRole>(context));
+            var UserManager = new UserManager<User>(new UserStore<User>(context));
+            var RoleManager = new RoleManager<IdentityRole>(new RoleStore<IdentityRole>(context));
 
             //Create Role Test and User Test
-            //List<string> roles = new List<string>() { "Active","Admin" };
-            //foreach (string role in roles)
-            //{
-            //    if (!RoleManager.RoleExists(role))
-            //    {
-            //        var roleresult = RoleManager.Create(new IdentityRole(role));
-            //    }
-            //}
+            List<string> roles = new List<string>() { "Active", "Admin" };
+            foreach (string role in roles)
+            {
+                if (!RoleManager.RoleExists(role))
+                {
+                    var roleresult = RoleManager.Create(new IdentityRole(role));
+                }
+            }
 
             //Create User=Admin with password=P@ssword123
-            //User user = new User();
-            //user.Email = "someemail@somedomain.com";
-            //user.UserName = "someemail@somedomain.com";
-            //var adminresult = UserManager.Create(user, "P@ssword123");
+            User user = new User();
+            user.Email = "someemail@somedomain.com";
+            user.UserName = "someemail@somedomain.com";
+            var adminresult = UserManager.Create(user, "P@ssword123");
 
-            ////Add User Admin to Role Admin
-            //if (adminresult.Succeeded)
-            //{
-            //    var result = UserManager.AddToRole(user.Id, "Active");
-            //    result = UserManager.AddToRole(user.Id, "Admin");
-            //}
+            //Add User Admin to Role Admin
+            if (adminresult.Succeeded)
+            {
+                var result = UserManager.AddToRole(user.Id, "Active");
+                result = UserManager.AddToRole(user.Id, "Admin");
+            }
         }
     }
 }

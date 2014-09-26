@@ -3,11 +3,7 @@
 var app = angular.module('app', [
     'ngRoute',
     'ngCookies',
-    'main',
-    'home',
-    'signIn',
-    'register',
-    'todoManager'
+    'topic'
 ]);
 
 app.config(['$routeProvider', '$locationProvider', '$httpProvider', function ($routeProvider, $locationProvider, $httpProvider) {
@@ -36,21 +32,21 @@ app.config(['$routeProvider', '$locationProvider', '$httpProvider', function ($r
     // Routes
     //================================================
     $routeProvider.when('/', {
-        templateUrl: 'App/Home',
-        controller: 'homeCtrl'
+        templateUrl: 'Assets/template/topic_list.html',
+        controller: 'rankedTopicCtrl'
     });
-    $routeProvider.when('/register', {
-        templateUrl: 'App/Register',
-        controller: 'registerCtrl'
-    });
-    $routeProvider.when('/signin', {
-        templateUrl: 'App/SignIn',
-        controller: 'signInCtrl'
-    });
-    $routeProvider.when('/todomanager', {
-        templateUrl: 'App/TodoManager',
-        controller: 'todoManagerCtrl'
-    });
+    //$routeProvider.when('/register', {
+    //    templateUrl: 'App/Register',
+    //    controller: 'registerCtrl'
+    //});
+    //$routeProvider.when('/signin', {
+    //    templateUrl: 'App/SignIn',
+    //    controller: 'signInCtrl'
+    //});
+    //$routeProvider.when('/todomanager', {
+    //    templateUrl: 'App/TodoManager',
+    //    controller: 'todoManagerCtrl'
+    //});
     
     $routeProvider.otherwise({
         redirectTo: '/'
