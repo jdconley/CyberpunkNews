@@ -46,8 +46,16 @@ namespace CyberpunkNews.Models
         public string title { get; set; }
         [Required]
         public string url { get; set; }
-        public DateTimeOffset submit_date { get; set; }
+        public DateTimeOffset submitDate { get; set; }
         public int karma { get; set; }
+    }
+
+    public class vote
+    {
+        [Key]
+        public int id { get; set; }
+        public string email { get; set; }
+        public topic topic { get; set; }
     }
 
     public class DBContext : IdentityDbContext<User>
@@ -76,6 +84,7 @@ namespace CyberpunkNews.Models
 
         public DbSet<todoItem> todos { get; set; }
         public DbSet<topic> topics { get; set; }
+        public DbSet<vote> votes { get; set; }
 
     }
 

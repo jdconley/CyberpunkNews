@@ -6,16 +6,26 @@
                 .success(function (data) {
                     $scope.topics = data;
                     _.forEach($scope.topics, function (topic) {
-                        topic.submit_date = new Date(topic.submit_date.substr(0, 19));
+                        topic.submitDate = new Date(topic.submitDate.substr(0, 19));
                     });
 
                     var sortType = $location.search().sort;
                     if (sortType === 'date') {
-                        $scope.topics = _.sortBy($scope.topics, 'submit_date').reverse();
+                        $scope.topics = _.sortBy($scope.topics, 'submitDate').reverse();
                     }
                     else {
                         $scope.topics = _.sortBy($scope.topics, 'karma').reverse();
                     }
+
+                    $http.get('/api/WS_Account/GetUserVotes')
+                        .success(function (data) {
+                            _.forEach($scope.topics, function (topic) {
+                                topic.hasVoted = _.some(data, function (vote) {
+                                    return vote.topic.id === topic.id;
+                                });
+                            });
+
+                        });
                 });
 
             $scope.upvote = function (topic) {
@@ -23,6 +33,7 @@
                 .success(function (data, status) {
                     // does return status matter?
                     topic.karma += 1;
+                    topic.hasVoted = true;
                 });
             };
 

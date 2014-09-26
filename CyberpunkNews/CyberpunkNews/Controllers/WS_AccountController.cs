@@ -51,5 +51,12 @@ namespace CyberpunkNews.Controllers
         {
             return await UserManager.GetRolesAsync(Request.GetOwinContext().Authentication.User.Identity.GetUserId());
         }
+
+        [HttpGet]
+        public IList<vote> GetUserVotes()
+        {
+            var user = GetCurrentUserName();
+            return db.votes.Include("topic").Where(v => v.email == user).ToList();
+        }
     }
 }

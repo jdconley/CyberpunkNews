@@ -26,7 +26,7 @@ namespace CyberpunkNews.Migrations
               {
                   title = "title 1",
                   url = "http://www.google.com",
-                  submit_date = DateTimeOffset.UtcNow,
+                  submitDate = DateTimeOffset.UtcNow,
                   karma = 3
               }
             );

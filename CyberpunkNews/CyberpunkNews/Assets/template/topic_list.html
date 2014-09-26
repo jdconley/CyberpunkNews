@@ -1,9 +1,9 @@
 ﻿<ol>
     <li ng-repeat="topic in topics">
-        <button ng-click="upvote(topic)"><i class="glyphicon glyphicon-chevron-up"></i></button>
+        <button ng-if="!topic.hasVoted" ng-click="upvote(topic)"><i class="glyphicon glyphicon-chevron-up"></i></button>
         <a href="{{topic.url}}">{{topic.title}}</a>
         <br />
-        {{topic.karma}} points {{topic.submit_date | date:'yyyy-MM-dd HH:mm:ss'}}
+        {{topic.karma}} points {{topic.submitDate | date:'yyyy-MM-dd HH:mm:ss'}}
     </li>
 </ol>
 

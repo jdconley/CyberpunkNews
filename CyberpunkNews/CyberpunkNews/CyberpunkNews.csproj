@@ -190,6 +190,10 @@
     <Compile Include="Migrations\201409260331131_MadeTopicTitleAndUrlRequired.Designer.cs">
       <DependentUpon>201409260331131_MadeTopicTitleAndUrlRequired.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201409260521375_Vote.cs" />
+    <Compile Include="Migrations\201409260521375_Vote.Designer.cs">
+      <DependentUpon>201409260521375_Vote.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountBindingModels.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -273,6 +277,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201409260331131_MadeTopicTitleAndUrlRequired.resx">
       <DependentUpon>201409260331131_MadeTopicTitleAndUrlRequired.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201409260521375_Vote.resx">
+      <DependentUpon>201409260521375_Vote.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

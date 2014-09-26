@@ -23,10 +23,20 @@ namespace CyberpunkNews.Controllers
         [HttpPost]
         public HttpResponseMessage Upvote(int id)
         {
-            var item = db.topics.First(t => t.id == id);
-            item.karma += 1;
-            db.SaveChanges();
+            var email = Request.GetOwinContext().Authentication.User.Identity.Name;
+            var existingVote = db.votes.FirstOrDefault(v => v.email == email && v.topic.id == id);
+            if (existingVote == null)
+            {
 
+                var topic = db.topics.First(t => t.id == id);
+                topic.karma += 1;
+
+                var vote = db.votes.Create();
+                vote.topic = topic;
+                vote.email = email;
+                db.votes.Add(vote);
+                db.SaveChanges();
+            }
             return Request.CreateResponse(HttpStatusCode.Accepted);
         }
 
@@ -44,7 +54,7 @@ namespace CyberpunkNews.Controllers
 
             if (errors.Count == 0)
             {
-                item.submit_date = DateTimeOffset.UtcNow;
+                item.submitDate = DateTimeOffset.UtcNow;
 
                 db.topics.Add(item);
                 db.SaveChanges();
