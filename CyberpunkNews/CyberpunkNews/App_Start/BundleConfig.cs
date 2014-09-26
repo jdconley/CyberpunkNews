@@ -18,14 +18,14 @@ namespace CyberpunkNews
 
 
             bundles.Add(new ScriptBundle("~/ng").Include(
-                        "~/Assets/ng/angular.min.js",
-                        "~/Assets/ng/angular-route.min.js",
-                        "~/Assets/ng/angular-cookies.min.js"));
+                        "~/Assets/ng/angular.js",
+                        "~/Assets/ng/angular-route.js",
+                        "~/Assets/ng/angular-cookies.js"));
 
             bundles.Add(new ScriptBundle("~/app").IncludeDirectory("~/Assets/app", "*.js", true));
 
             bundles.Add(new ScriptBundle("~/jquery").Include(
-                        "~/Assets/jquery/jquery.min.js"));
+                        "~/Assets/jquery/jquery-1.11.1.js"));
 
             bundles.Add(new ScriptBundle("~/misc").Include(
                 "~/Assets/misc/lodash.min.js",

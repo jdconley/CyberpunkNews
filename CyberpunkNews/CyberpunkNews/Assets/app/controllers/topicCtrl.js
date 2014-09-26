@@ -6,7 +6,7 @@
                 .success(function (data) {
                     $scope.topics = data;
                     _.forEach($scope.topics, function (topic) {
-                        topic.submitDate = new Date(topic.submitDate.substr(0, 19));
+                        //topic.submitDate = topic.submitDate.substr(0, 19);
                         if (!topic.submitter) topic.submitter = 'anonymous';
                     });
 
